@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- STILO BOOTSTRAP -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
 
     <!-- STILO PROPIO -->
     <link rel="stylesheet" href="style.css" />
@@ -18,6 +19,27 @@
 
     <title>Calculadora V1</title>
 
+    <!-- INCIO SCRIPT TESTE -->
+    <style>
+        /* MARCA COM LINHAS VERDES TODOS OS ATRIBUTOS [SECTION] */
+        section {
+            border: 1px solid transparent;
+        }
+        /* MARCA COM LINHAS AZUL TODOS OS ATRIBUTOS [ASIDE] */
+        aside {
+            border: 1px solid transparent;
+        }
+        /* MARCA COM LINHAS AMARELA TODOS OS ATRIBUTOS [FOOTER] */
+        footer {
+            border: 1px solid transparent;
+        }
+        /* MARCA COM LINHAS VERMELHAS TODAS AS CLASSE [COL] */
+        .col {
+            border: 1px solid transparent;
+        }
+    </style>
+    <!-- FIM SCRIPT TESTE -->
+
 </head>
 
 <body>
@@ -26,38 +48,68 @@
     <main>
 
         <!-- INICIO DO SECTION -->
-        <section>
-            <input class="form-control form-control-lg" type="text" placeholder=".form-control-lg" aria-label=".form-control-lg example">
+        <section class="container mt-2 mb-2">
+
+            <!-- INCIO INPUT PRINCIPAL -->
+            <div class="row">
+                <input id="inputPrincipal" class="form-control form-control-lg text-end" type="number" placeholder="0" disabled>
+                <input id="inputPrincipalReal" class="form-control form-control-lg text-end" type="text" placeholder="0" disabled>
+            </div>
+            <!-- FIM INPUT PRINCIPAL -->
+
+            <!-- INCIO INPUT SECUNDARIO -->
+            <div class="row">
+                <input id="inputSecondario" class="form-control form-control text-start" type="number" placeholder="0" disabled>
+                <input id="inputSecondarioReal" class="form-control form-control text-start" type="text" placeholder="0" disabled>
+            </div>
+            <!-- FIM INPUT SECUNDARIO -->
+            
         </section>
         <!-- FIM DO SECTION -->
 
         <!-- INICIO DO ASIDE -->
-        <aside>
+        <aside class="container mt-2">
 
-            <!-- INICIO DA LISTA [LEFT] DE CONTROLES [ADICIONADA VIA JAVASCRIPT] -->
-            <ul>
-                <li>
-                    <div><button type="button" class="btn btn-primary">7</button></div>
-                    <div><button type="button" class="btn btn-primary">8</button></div>
-                    <div><button type="button" class="btn btn-primary">9</button></div>
-                </li>
-            </ul>
-            <!-- FIM DA LISTA [LEFT] DE CONTROLES [ADICIONADA VIA JAVASCRIPT] -->
+            <!-- INICIO CONTAINER BOTOES -->
+            <div class="row">
 
-            <!-- INICIO DA LISTA [RIGHT] DE CONTROLES [ADICIONADA VIA JAVASCRIPT] -->
-            <ul>
-                <li>
-                    <div><button type="button" class="btn btn-primary">C</button></div>
-                    <div><button type="button" class="btn btn-primary">CE</button></div>
-                </li>
-            </ul>
-            <!-- FIM DA LISTA [RIGHT] DE CONTROLES [ADICIONADA VIA JAVASCRIPT] -->
+                <!-- INICIO DA LISTA [LEFT] DE CONTROLES [ADICIONADA VIA JAVASCRIPT] -->
+                <ul id="ul_left" class="container cardLeft col-8">
+                    <!-- <li class="row text-center">
+                        <div class="col"><button type="button" class="btn btn-primary">7</button></div>
+                        <div class="col"><button type="button" class="btn btn-primary">8</button></div>
+                        <div class="col"><button type="button" class="btn btn-primary">9</button></div>
+                    </li> -->
+                </ul>
+                <!-- FIM DA LISTA [LEFT] DE CONTROLES [ADICIONADA VIA JAVASCRIPT] -->
+
+                <!-- INICIO DA LISTA [RIGHT] DE CONTROLES [ADICIONADA VIA JAVASCRIPT] -->
+                <ul id="ul_right" class="container cardRight col-4">
+                    <!-- <li class="row text-center ">
+                        <div class="col"><button type="button" class="btn btn-primary">C</button></div>
+                        <div class="col"><button type="button" class="btn btn-primary">CE</button></div>
+                    </li> -->
+                </ul>
+                <!-- FIM DA LISTA [RIGHT] DE CONTROLES [ADICIONADA VIA JAVASCRIPT] -->
+                
+            </div>
+            <!-- FIM CONTAINER BOTOES -->
 
         </aside>
         <!-- FIM DO ASIDE -->
 
         <!-- INICIO DO FOOTER -->
-        <footer>
+        <footer class="mt-2 mb-2">
+
+            <!-- INICIO CONTAINER INFORMAÇÃO APP -->
+            <div class="container text-center">
+                <div class="row">
+                    <div class="col bg-dark text-white">
+                        App version - 2023 .v31
+                    </div>
+                </div>
+            </div>
+            <!-- FIM CONTAINER INFORMAÇÃO APP -->
 
         </footer>
         <!-- FIM DO FOOTER -->
@@ -66,9 +118,10 @@
     <!-- FIM DO MODELO -->
 
     <!-- JAVASCRIPT DO BOOTSTRAP -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
-        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+
+    <!-- JAVASCRIPT LOCAL PARA CONTROLAR BOTOES -->
+    <script src="main.js" type="text/javascript"></script>
 
 </body>
 

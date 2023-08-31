@@ -1,5 +1,32 @@
+/* RESETA TODOS ELEMENTOS DA PAGINA */
 * {
     margin: 0px;
     border: 0px;
     padding: 0px;
+}
+
+/* RETIRA MARGIN E PADDING PADRÃO [UL] */
+ul {
+    margin: 0;
+    padding: 0;
+}
+/* RETIRA PADDING E MARGIN DA CLASSE [COL] */
+.col {
+    margin: 0;
+    padding: 0;
+}
+
+/* ESTILO INPUT DISPLAY */
+.form-control {
+    border-radius: 0px;
+    border: 0px solid transparent;
+}
+
+/* ESTILO PADRÃO BOTÃO DENTRO [CONTAINER->ROW] */
+.container .row button {
+    width: 100%;
+    height: 100px;
+    margin: 0px;
+    padding: 0px;
+    border-radius: 0px;
 }
