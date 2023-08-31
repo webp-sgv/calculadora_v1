@@ -5,11 +5,19 @@
     padding: 0px;
 }
 
+/* AJUSTA O TAMONHA DA PAGINA */
+body {
+    width: 100vw;
+    height: 100vh;
+    border: 1px solid red;
+}
+
 /* RETIRA MARGIN E PADDING PADRÃO [UL] */
 ul {
     margin: 0;
     padding: 0;
 }
+
 /* RETIRA PADDING E MARGIN DA CLASSE [COL] */
 .col {
     margin: 0;

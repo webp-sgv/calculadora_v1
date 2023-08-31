@@ -7,7 +7,7 @@ const createBtn = () => {
         { idEl: "ul_left", number: [true, true, true], keys: [7, 8, 9], col: ["", "", ""], type: ["btn-primary", "btn-primary", "btn-primary"] },
         { idEl: "ul_left", number: [true, true, true], keys: [4, 5, 6], col: ["", "", ""], type: ["btn-primary", "btn-primary", "btn-primary"] },
         { idEl: "ul_left", number: [true, true, true], keys: [1, 2, 3], col: ["", "", ""], type: ["btn-primary", "btn-primary", "btn-primary"] },
-        { idEl: "ul_left", number: [true, false], keys: [0, ","], col: ["col-8", "", ""], type: ["btn-success", "btn-primary"] },
+        { idEl: "ul_left", number: [true, false], keys: [0], col: [""], type: ["btn-success", "btn-primary"] },
     ];
     let rowRigth = [
         { idEl: "ul_right", number: [false, false], keys: ["CE", "C"], col: ["", ""], type: ["btn-danger", "btn-warning"] },
@@ -94,7 +94,16 @@ const captureActionBtn = async (key, number) => {
 
     // FUNÇÃO RECICLADA PARA LIMPAR INPUT SECUNDARIO
     const clearInputSecondary = async () => {
+
+        // INSERE O VALOR DO INPUT PRIMARIO = 0
         document.getElementById(inputSecondary).value = "";
+
+        // CRIA UM NUMERO EM FORMATO DE REAL
+        var real = await formatReal(0, coin, region);
+
+        // INSERE O VALOR DO INPUT PRIMARIO NO PRIMARIO REAL
+        document.getElementById(inputSecondaryReal).value = real;
+
     }
 
     // FUNÇÃO RECICLADA PARA INSERIR VALOR NO INPUT PRIMARIO
@@ -123,6 +132,9 @@ const captureActionBtn = async (key, number) => {
             case 'sum':
                 await insertValInputSecondary(valueCurrentInputPrimary + valueCurrentInputSecondary);
                 break;
+            case 'multiply':
+                await insertValInputSecondary(valueCurrentInputPrimary * valueCurrentInputSecondary);
+                break;
             default:
                 break;
         }
@@ -136,6 +148,7 @@ const captureActionBtn = async (key, number) => {
         var real = await formatReal(value, coin, region);
         document.getElementById(inputSecondary).value = value;
         document.getElementById(inputSecondaryReal).value = real;
+
     }
             
     // VEREFICA SE É UM NUMERO
@@ -213,6 +226,14 @@ const captureActionBtn = async (key, number) => {
             var valInputPrimary = document.getElementById(inputPrimary).value;
             // DEFINE O VALOR SECUNDARIO COM O VALOR PRINCIPAL
             await insertValInputPrimary(valInputPrimary, 'equal');
+            // DEFINE O ULTIMO NUMERO PRESIONADO
+            lastBtnSelected = key;
+            break;
+        case '*': // VERIFICA SE É UM OPERADOR [*]
+            // RESERVA O VALOR DO INPUT PRINCIPAL
+            var valInputPrimary = document.getElementById(inputPrimary).value;
+            // DEFINE O VALOR SECUNDARIO COM O VALOR PRINCIPAL
+            await insertValInputPrimary(valInputPrimary, 'multiply');
             // DEFINE O ULTIMO NUMERO PRESIONADO
             lastBtnSelected = key;
             break;
